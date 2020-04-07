@@ -36,5 +36,14 @@ public class ListarprodutoActivity extends AppCompatActivity {
         this.lvsProdutos = (ListView) findViewById(R.id.lsvProdutos);
         this.adapterListaProdutos  = new AdapterListaProdutos(ListarprodutoActivity.this, this.produtoList);
         this.lvsProdutos.setAdapter(this.adapterListaProdutos);
+        String x;
+        this.lvsProdutos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int posicao, long id) {
+
+                Produto produtoSelecionado = (Produto) adapterListaProdutos.getItem(posicao);
+                Toast.makeText (context: ListarprodutoActivity.this, text: "Produto: " + produtoSelecionado.getNome() , Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
