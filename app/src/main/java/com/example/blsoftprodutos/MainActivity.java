@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.blsoftprodutos.activities.ActivityProduto;
+import com.example.blsoftprodutos.activities.ListarprodutoActivity;
 import com.example.blsoftprodutos.controller.ProdutoController;
 import com.example.blsoftprodutos.dbHelper.ConexaoSQLite;
 import com.example.blsoftprodutos.model.Produto;
@@ -15,6 +16,7 @@ import com.example.blsoftprodutos.model.Produto;
 public class MainActivity extends AppCompatActivity {
 
     private Button btnCadastroProdutos;
+    private Button btnListarProdutos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,20 +24,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ConexaoSQLite conexaoSQLite = ConexaoSQLite.getInstancia(this);
-/*
-        //Produto na mão
-        Produto produto1 = new Produto();
-        produto1.setId(12346);
-        produto1.setNome("Computador");
-        produto1.setQuantidadeEmEstoque(2);
-        produto1.setPreco(1500);
-
-        ProdutoController produtoController = new ProdutoController(conexaoSQLite);
-        long resultado = produtoController.salvarProdutoController(produto1);
-        System.out.println("O resultado é: " + resultado);*/
-
 
         this.btnCadastroProdutos = (Button) findViewById(R.id.btnCadastroProdutos);
+        this.btnListarProdutos = (Button) findViewById(R.id.btnListarProdutos);
 
         this.btnCadastroProdutos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
 
                 //Intenção de mudar de activity
                 Intent intent = new Intent(MainActivity.this, ActivityProduto.class);
+                startActivity(intent);
+            }
+        });
+
+        this.btnListarProdutos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListarprodutoActivity.class);
                 startActivity(intent);
             }
         });

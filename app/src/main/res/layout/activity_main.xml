@@ -21,10 +21,16 @@
         android:layout_height="25dp" />
 
     <Button
-    android:id="@+id/btnCadastroProdutos"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Cadastro de Produtos"/>
+      android:id="@+id/btnCadastroProdutos"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Cadastro de Produtos"/>
+
+    <Button
+        android:id="@+id/btnListarProdutos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    android:text="Listar Produtos"/>
 
 
 </LinearLayout>
